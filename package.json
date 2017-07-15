@@ -1,0 +1,16 @@
+{
+  "name": "watchandcode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "todos.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "budo todos.js --live"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "budo": "^10.0.3",
+    "watchify": "^3.9.0"
+  }
+}
