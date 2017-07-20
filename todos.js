@@ -59,27 +59,124 @@
 // }
 
 //version 4
+// var todoList = {
+//   todos: []
+//   displayTodos: function(){
+//     console.log('My Todos', this.todos);
+//   }
+//   addTodo: function(todoText){
+//     this.todos.push({
+//       todoText: todoText,
+//       completed: false
+//     });
+//     this.displayTodos();
+//   }
+//   changeTodo: function(position, todoText){
+//     // this.todos[position] = newValue;
+//     this.todos[position].todoText = todoText
+//     this.displayTodos();
+//   }
+//   deleteTodos: function(position){
+//     this.todos.splice(position, 1);
+//     this.displayTodos();
+//   }
+//   toggleCompleted: function(position){
+//     var todo = this.todos[position];
+//     todo.completed = !todo.completed;
+//     this.displayTodos();
+//   }
+// };
+
+//version 5
+//for loop
+//for (var i = 0; i < 3; i++){
+//console.log('hey');
+//}
+//looping over arrays
+//for (var i = 0; i < 3; i++){
+//console.log(i);
+//}
+
+// var testArray = ['item1', 'item2', 'item3'];
+// testArray[0]
+// testArray[1]
+// testArray[2]
+//
+// for(var i = 0; i < 3; i++){
+//   console.log(testArray[i]);
+// }
+// for(var i = 0; i < testArray.length; i++){
+//   console.log(testArray[i]);
+// }
+
+//displayTodos should show .todoText
+// var todoList = {
+//   todos: [],
+//   displayTodos: function(){
+//     console.log('My Todos:');
+//     for (var i = 0; i < this.todos.length; i++){
+//     console.log(this.todos[i].todoText);
+//     }
+//   },
+//   addTodo: function(todoText){
+//     this.todos.push({
+//       todoText: todoText,
+//       completed: false
+//     });
+//     this.displayTodos();
+//   },
+//   changeTodo: function(position, todoText){
+//     // this.todos[position] = newValue;
+//     this.todos[position].todoText = todoText
+//     this.displayTodos();
+//   },
+//   deleteTodos: function(position){
+//     this.todos.splice(position, 1);
+//     this.displayTodos();
+//   },
+//   toggleCompleted: function(position){
+//     var todo = this.todos[position];
+//     todo.completed = !todo.completed;
+//     this.displayTodos();
+//   }
+// };
+//displayTodos should tell you if .todos is empty
 var todoList = {
-  todos: []
+  todos: [],
   displayTodos: function(){
-    console.log('My Todos', this.todos);
-  }
+    if (this.todos.length === 0){
+      console.log('Your todo list is empty!');
+    }  else {
+      console.log('My Todos:');
+      for (var i = 0; i < this.todos.length; i++){
+      console.log(this.todos[i].todoText);
+    //  check if .completed is true
+      if(this.todos[i].completed === true){
+        //print with (x)
+        console.log('(x)', this.todos[i].todoText);
+      } else{
+        //print with ()
+        console.log('( )', this.todos[i].todoText);
+      }
+      }
+    }
+  },
   addTodo: function(todoText){
     this.todos.push({
       todoText: todoText,
       completed: false
     });
     this.displayTodos();
-  }
+  },
   changeTodo: function(position, todoText){
     // this.todos[position] = newValue;
     this.todos[position].todoText = todoText
     this.displayTodos();
-  }
+  },
   deleteTodos: function(position){
     this.todos.splice(position, 1);
     this.displayTodos();
-  }
+  },
   toggleCompleted: function(position){
     var todo = this.todos[position];
     todo.completed = !todo.completed;
