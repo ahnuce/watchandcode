@@ -183,3 +183,16 @@ var todoList = {
     this.displayTodos();
   }
 };
+
+
+//we want to get access to the todos button
+var displayTodosButton = document.getElementById('displayTodosButton');
+console.log(displayTodosButton);
+
+
+
+//we want to run displayTodos method, when someone clicks the display todos button
+
+displayTodosButton.addEventListener('click', function(){
+  todoList.displayTodos();
+});
