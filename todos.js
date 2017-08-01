@@ -181,6 +181,28 @@ var todoList = {
     var todo = this.todos[position];
     todo.completed = !todo.completed;
     this.displayTodos();
+  },
+  toggleAll: function(){
+    var totalTodos = this.todos.length;
+    var completedTodos = 0;
+
+    //get number of completed todos
+    for (var i = 0; i < totalTodos; i++){
+      if (this.todos[i].completed === true){
+        completedTodos++;
+      }
+    }
+    //case 1: if everything's true, make everything false.
+    if (completedTodos === totalTodos){
+      for (var i = 0; i < totalTodos; i++){
+        this.todos[i].completed = false;
+        }
+      } else {
+        for (var i = 0; i < totalTodos; i++ ){
+          this.todos[i].completed = true;
+      }
+    }
+this.displayTodos();
   }
 };
 
@@ -188,7 +210,7 @@ var todoList = {
 //we want to get access to the todos button
 var displayTodosButton = document.getElementById('displayTodosButton');
 console.log(displayTodosButton);
-
+var toggleAllButton = document.getElementById("toggleAllButton");
 
 
 //we want to run displayTodos method, when someone clicks the display todos button
@@ -196,3 +218,7 @@ console.log(displayTodosButton);
 displayTodosButton.addEventListener('click', function(){
   todoList.displayTodos();
 });
+
+toggleAllButton.addEventListener('click', function(){
+  todoList.toggleAll();
+})
