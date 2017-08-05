@@ -173,7 +173,7 @@ var todoList = {
     this.todos[position].todoText = todoText
     this.displayTodos();
   },
-  deleteTodos: function(position){
+  deleteTodo: function(position){
     this.todos.splice(position, 1);
     this.displayTodos();
   },
@@ -241,5 +241,10 @@ var handlers = {
     todoList.changeTodo(changeTodoPositionInput.valueAsNumber, changeTodoTextInput.value)
     changeTodoTextInput.value = '';
     changeTodoPositionInput.value = '';
+  },
+  deleteTodo: function(){
+    var deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
+    todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
+    deleteTodoPositionInput.value = '';
   }
 };
