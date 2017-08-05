@@ -8,11 +8,23 @@
   </head>
   <body>
     <h1>Anusones Todo List</h1>
-    <button type="button" id="displayTodosButton">Display Todos</button>
-    <button type="button" id="toggleAllButton">Toggle All</button>
-    <button type="button" onclick="handlers.displayTodos()">Display Todos</button>
-    <button type="button" onclick="handlers.toggleAll()">Toggle All</button>
+    <div>
+      <button type="button" id="displayTodosButton">Display Todos</button>
+      <button type="button" id="toggleAllButton">Toggle All</button>
+      <button type="button" onclick="handlers.displayTodos()">Display Todos</button>
+      <button type="button" onclick="handlers.toggleAll()">Toggle All</button>
+    </div>
 
+    <div>
+      <button onclick="handlers.addTodo()">Add Todo</button>
+      <input id="addTodoTextInput" type="text" >
+    </div>
+
+    <div>
+      <button onclick="handlers.changeTodo()">Change Todo</button>
+      <input id="changeTodoPositionInput" type="number">
+      <input id="changeTodoTextInput" type="text">
+    </div>
     <script src="todos.js"></script>
   </body>
 </html>
